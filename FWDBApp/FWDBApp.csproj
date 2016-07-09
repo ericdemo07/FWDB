@@ -211,6 +211,8 @@
     <Compile Include="Models\Framework.cs" />
     <Compile Include="Models\FrameworkModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\FrameworkRepository.cs" />
+    <Compile Include="Repository\IFrameworkRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

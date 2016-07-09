@@ -4,14 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FWDBApp.Models;
-
+using FWDBApp.Repository;
 namespace FWDBApp.Controllers
 {
     public class DefaultController : Controller
     {
-        private FrameworkModel model = new FrameworkModel();
+        private IFrameworkRepository _frameworkRepository;
 
-        // GET: Default
+        public DefaultController()
+        {
+            this._frameworkRepository = new FrameworkRepository(new FrameworkModel());
+        }
+
         public ActionResult Initiator()
         {
             return View();
@@ -19,15 +23,15 @@ namespace FWDBApp.Controllers
 
         public ActionResult Index()
         {
-            System.Diagnostics.Debug.WriteLine("Hello to you "+ model.Frameworks.ToList().Count);
-
-            return View(model.Frameworks.ToList());
+            var frameworkAsList = _frameworkRepository.FetchFrameworks();
+            return View(frameworkAsList);
         }
 
         [HttpPost]
         public ActionResult GetFrameworkDetail()
         {
-            return Json(model.Frameworks.ToList());
+            var frameworkAsList = _frameworkRepository.FetchFrameworks();
+            return Json(frameworkAsList);
         }
     }
 }
