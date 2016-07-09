@@ -1,3 +1,28 @@
 ﻿<div>
-    <button type="button" ng-click="getFrameworksAsList()" autofocus>Get Frameworks</button>
+    <button type="submit" ng-click="getFrameworksAsList()" autofocus>Get Frameworks</button>
+    <table>
+        <tr>
+            <th>
+                {{keyRing[1]}}
+            </th>
+            <th>
+                {{keyRing[2]}}
+            </th>
+            <th>
+                {{keyRing[3]}}
+            </th>
+        </tr>
+
+        <tr ng-repeat="frameworkDetail in frameworkResponseList">
+            <td>
+                {{frameworkDetail.FrameworkName}}
+            </td>
+            <td>
+                {{frameworkDetail.UserCount}}
+            </td>
+            <td>
+                {{frameworkDetail.SupportedBy}}
+            </td>
+        </tr>
+    </table>
 </div>

@@ -6,14 +6,13 @@
     function FrameworkDetailController($scope,QueryService)
     {
         $scope.getFrameworksAsList = function ()
-        {
-            console.log("Param : [ " + "Doomsday133");
-            
+        {            
             QueryService.DisplayFrameworkAsList().then
             (
 			    function (response)
 			    {
-			        console.log("Response : ["+response);
+			        $scope.frameworkResponseList = response;
+			        $scope.keyRing = Object.keys(response[0]);
 			    }
             );
         }
