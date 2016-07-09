@@ -9,16 +9,16 @@ namespace FWDBApp.Repository
 {
     public class FrameworkRepository : IFrameworkRepository
     {
-        private FrameworkModel _context;
+        private FrameworkModel context;
 
         public FrameworkRepository(FrameworkModel frameworkContext)
         {
-            this._context = frameworkContext;
+            this.context = frameworkContext;
         }
 
         public IEnumerable<Framework> FetchFrameworks()
         {
-                return _context.Frameworks.ToList();
+                return context.Frameworks.ToList();
         }
 
         private bool disposed = false;
@@ -29,7 +29,7 @@ namespace FWDBApp.Repository
             {
                 if (disposing)
                 {
-                    _context.Dispose();
+                    context.Dispose();
                 }
             }
             this.disposed = true;

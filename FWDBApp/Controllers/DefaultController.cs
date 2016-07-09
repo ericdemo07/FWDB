@@ -9,11 +9,11 @@ namespace FWDBApp.Controllers
 {
     public class DefaultController : Controller
     {
-        private IFrameworkRepository _frameworkRepository;
+        private IFrameworkRepository frameworkRepository;
 
         public DefaultController()
         {
-            this._frameworkRepository = new FrameworkRepository(new FrameworkModel());
+            this.frameworkRepository = new FrameworkRepository(new FrameworkModel());
         }
 
         public ActionResult Initiator()
@@ -23,14 +23,14 @@ namespace FWDBApp.Controllers
 
         public ActionResult Index()
         {
-            var frameworkAsList = _frameworkRepository.FetchFrameworks();
+            var frameworkAsList = frameworkRepository.FetchFrameworks();
             return View(frameworkAsList);
         }
 
         [HttpPost]
         public ActionResult GetFrameworkDetail()
         {
-            var frameworkAsList = _frameworkRepository.FetchFrameworks();
+            var frameworkAsList = frameworkRepository.FetchFrameworks();
             return Json(frameworkAsList);
         }
     }
