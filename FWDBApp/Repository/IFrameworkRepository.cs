@@ -7,7 +7,7 @@ using FWDBApp.Models;
 
 namespace FWDBApp.Repository
 {
-    interface IFrameworkRepository : IDisposable
+    public interface IFrameworkRepository : IDisposable
     {
         IEnumerable<Framework> FetchFrameworks();
     }

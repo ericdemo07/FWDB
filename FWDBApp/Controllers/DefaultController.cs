@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using FWDBApp.Models;
 using FWDBApp.Repository;
 namespace FWDBApp.Controllers
@@ -11,9 +7,9 @@ namespace FWDBApp.Controllers
     {
         private IFrameworkRepository frameworkRepository;
 
-        public DefaultController()
+        public DefaultController(IFrameworkRepository frameworkRepository)
         {
-            this.frameworkRepository = new FrameworkRepository(new FrameworkModel());
+            this.frameworkRepository = frameworkRepository;
         }
 
         public ActionResult Initiator()
@@ -23,15 +19,15 @@ namespace FWDBApp.Controllers
 
         public ActionResult Index()
         {
-            var frameworkAsList = frameworkRepository.FetchFrameworks();
-            return View(frameworkAsList);
+            var frameworkAsList = this.frameworkRepository.FetchFrameworks();
+            return this.View(frameworkAsList);
         }
 
         [HttpPost]
         public ActionResult GetFrameworkDetail()
         {
-            var frameworkAsList = frameworkRepository.FetchFrameworks();
-            return Json(frameworkAsList);
+            var frameworkAsList = this.frameworkRepository.FetchFrameworks();
+            return this.Json(frameworkAsList);
         }
     }
 }
