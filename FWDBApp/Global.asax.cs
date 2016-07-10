@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using System.Web.Optimization;
 using System.Web.Routing;
 using FWDBApp.Repository;
 using SimpleInjector.Integration.Web.Mvc;
@@ -13,7 +12,6 @@ namespace FWDBApp
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             var container = new SimpleInjector.Container();
             

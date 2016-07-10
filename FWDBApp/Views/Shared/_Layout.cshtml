@@ -3,17 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Scripts/bootstrap.css">
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-ui-router.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app-services/queryService.service.js"></script>
     <script src="~/Scripts/FrameworkDetailPage/frameworkDetail.controller.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
 </head>
 <body>
-    <div ui-view></div>
-
-    <div class="container body-content">
-        <!--@RenderBody()-->
+    <!--next lines will make page responsive-->
+    <div class="row" style="padding-top:40px;">
+        <div class="container">
+            <!--template will be loaded dynamically as per state-->
+            <div ui-view></div>
+        </div>
     </div>
-</body>
+    <!--@RenderBody()-->
 </html>
