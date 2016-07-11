@@ -4,12 +4,15 @@ namespace FWDBApp.Controllers
 {
     public class DefaultController : Controller
     {
+        //using Simple Injector dor dependency injection to FrameworkRepository
         private IFrameworkRepository frameworkRepository;
+
         //gets data using repository pattern
         public DefaultController(IFrameworkRepository frameworkRepository)
         {
             this.frameworkRepository = frameworkRepository;
         }
+
         //will start server and handover task to angular
         public ActionResult Initiator()
         {

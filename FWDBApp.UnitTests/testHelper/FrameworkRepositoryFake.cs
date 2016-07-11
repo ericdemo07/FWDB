@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using FWDBApp.Models;
 
 namespace FWDBApp.Repository
 {
-    public class FrameworkRepository : IFrameworkRepository
+    public class FrameworkRepositoryFake : IFrameworkRepository
     {
-        private FrameworkModel context;
+        private List<Framework> context;
 
-        public FrameworkRepository(FrameworkModel frameworkContext)
+        public FrameworkRepositoryFake(List<Framework> frameworkContext)
         {
             this.context = frameworkContext;
         }
 
+
         public IEnumerable<Framework> FetchFrameworks()
         {
-            return context.Frameworks.ToList();
+            return context.ToList();
         }
+        private FrameworkModel context2;
 
         private bool disposed = false;
 
@@ -29,7 +30,7 @@ namespace FWDBApp.Repository
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    context2.Dispose();
                 }
             }
             this.disposed = true;

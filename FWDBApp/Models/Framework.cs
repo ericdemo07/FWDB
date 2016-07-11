@@ -9,6 +9,7 @@ namespace FWDBApp.Models
     [Table("Framework")]
     public partial class Framework
     {
+
         public int Id { get; set; }
 
         [StringLength(100)]
@@ -18,5 +19,19 @@ namespace FWDBApp.Models
 
         [StringLength(100)]
         public string SupportedBy { get; set; }
+
+
+        public Framework()
+        {
+
+        }
+
+        public Framework(int Id, string FrameworkName, int UserCount, string SupportedBy)
+        {
+            this.Id = Id;
+            this.FrameworkName = FrameworkName;
+            this.UserCount = UserCount;
+            this.SupportedBy = SupportedBy;
+        }
     }
 }
