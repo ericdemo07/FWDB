@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWDBApp", "FWDBApp\FWDBApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWDBApp.UnitTests", "FWDBApp.UnitTests\FWDBApp.UnitTests.csproj", "{616F5C37-D934-4CAA-93EB-502B2AD97814}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWDBApp.JavaScriptTests", "FWDBApp.JavaScriptTests\FWDBApp.JavaScriptTests.csproj", "{B1A4926B-E455-440B-A9B3-1F501C92C739}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{616F5C37-D934-4CAA-93EB-502B2AD97814}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{616F5C37-D934-4CAA-93EB-502B2AD97814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{616F5C37-D934-4CAA-93EB-502B2AD97814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A4926B-E455-440B-A9B3-1F501C92C739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A4926B-E455-440B-A9B3-1F501C92C739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A4926B-E455-440B-A9B3-1F501C92C739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A4926B-E455-440B-A9B3-1F501C92C739}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
